@@ -1,0 +1,5 @@
+Aula sobre séries
+ - Os valores de uma série serão todos dos mesmo tipo (diferente das listas que permitem vários tipos de valores diferentes (str, float, int, etc))
+ - Os índices de uma série funcionam como as chaves de um dicionário
+ - iloc serve para acessar os elementos de uma lista com base em suas posições, não com base nos valores dos seus índices (Exemplo de quando ele reordena a lista e acessar o primeiro elemento não pelo índice/id, mas pela posição dele)
+ 

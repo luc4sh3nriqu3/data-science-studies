@@ -1,0 +1,53 @@
+commit é o "checkpoint" que salva o progresso atual do código
+'ls' -> lista todos os arquivos e pastas de onde estamos
+'cd' -> muda de diretório
+'pwd' -> (print work director) mostra o caminho absoluto de onde estamos
+'ls -a' -> lista todos os arquivos (inclusive os arquivos ocultos) - Ex: /. (referência da pasta pra ela mesma) e /.. (Nó pai do diretório que estamos)
+'cd ..' -> Vai pra pasta acima de onde estamos (volta um nível)
+'CRL + L' -> limpa o terminal
+'mkdir' -> cria um diretório
+'cat' -> Mostra, no terminal, o conteúdo de um arquivo
+'git init .' -> Torna a nossa pasta especial, tornando-a um repositório git e permite a que a pasta faça versionamento de código
+'rm -rf' -> Exclui uma pasta ou arquivo
+'rm -rf .git/' -> Exclui a pasta especial que criamos anteriormente
+============================= COMANDOS GIT =============================
+'git init' -> inicia o repositório
+'git status' -> mostra o status atual do diretório (A primeira vez que digitei apareceu:
+	"On branch main -> Estamos na brach main (Branch padrão criada pelo git)
+
+	No commits yet -> Não realizamos nenhum 'checkpoint' ainda
+	
+	Untracked files: -> Arquivos não trackeados, ou seja, arquivos que a gente não disse pro git que quer que participe do commit ou versionamento
+  	  (use "git add <file>..." to include in what will be committed)
+        	comandos_bash.txt
+
+	nothing added to commit but untracked files present (use "git add" to track)"
+'git add' -> Seleciona os arquivos que eu quero que vá para o commit (Não é o commit ainda)
+	On branch main
+
+	No commits yet
+
+	Changes to be committed:
+  	  (use "git rm --cached <file>..." to unstage) -> Agora o arquivo esta pronto para ser commitado
+        	new file:   comandos_bash.txt
+
+'git commit -m "Primeiros comandos bash" ' -> Criando um commit e colocando um comentário no commit
+
+'nano' -> Permite editar texto dentro do terminal
+
+'git logs' -> Lista todos os commits (Histórico)
+========================================================================
+
+========================== FLUXO DE TRABALHO ===========================
+1. criar o diretório (pasta) do projeto
+2. iniciar o git dentro do diretório criado (git init .)
+3. edita ou cria um arquivo
+4. git status
+5. git add <nome arquivo>
+6. git status
+7. git commit -m "mensagem"
+8. git status
+9. volta para o passo 3.
+========================================================================
+
+fodase
