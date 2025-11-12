@@ -27,3 +27,14 @@ df.dropna(how='all', subset=['idade', 'salario']) #Remove as linhas em que TODOS
 df.dropna(how='any', subset=['idade', 'salario']) #Remove as linhas em que AO MENOS UM dos dados dentro do subset seja NaN (idade e salário)
 df.dropna(how='all', subset=['idade', 'nome'])
 # %%
+#Preenchendo dados faltantes usando fillna
+
+df['idade'].fillna(0) #Aplicando isso para uma série do dataset
+df.fillna(0) #Aplica a mudança para todo o dataset
+#Aqui podemos selecionar qualquer valor (nesse caso substituimos por 0, mas poderia ser média, 1, etc)
+# %%
+df.fillna({'nome': 'alguem', 'idade': 0}) #Definindo uma estratégia para cada série do dataframe
+# %%
+medias = df[['idade', 'salario']].mean()
+df.fillna(medias)   #Substituindo os valores numéricos existente pelas respectivas médias de cada um
+# %%
