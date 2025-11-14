@@ -46,3 +46,28 @@ uf['Expectativa de vida (2016)'] = uf['Expectativa de vida (2016)'].apply(exp_to
 # %%
 uf
 # %%
+#Coluna de alfabetização
+def alf_to_percent(p):
+    return round( float(p.replace('%', '')
+                  .replace(',', '.')) / 100, 3 )
+
+uf['Alfabetização (2016)'] = uf['Alfabetização (2016)'].apply(alf_to_percent)
+
+# %%
+uf
+# %%
+
+#Mortalidade infantil (por mil habutantes)
+# y -- 100
+#  x -- 1000 -> 100x = 1000y -> x = 10y
+#Ou seja retornaremos um valor 10 vezes maior que o recebido
+
+def mort_to_percent(y):
+    return round( float(y.replace('‰', '')
+                  .replace(',', '.')) * 10 )
+
+
+uf['Mortalidade infantil (2016)'] = uf['Mortalidade infantil (2016)'].apply(mort_to_percent)
+# %%
+uf
+# %%
