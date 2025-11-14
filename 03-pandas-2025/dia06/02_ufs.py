@@ -71,3 +71,23 @@ uf['Mortalidade infantil (2016)'] = uf['Mortalidade infantil (2016)'].apply(mort
 # %%
 uf
 # %%
+def uf_to_regiao(uf):
+    if uf in ['Distrito Federal', 'Goiás', 'Mato Grosso', 'Mato Grosso do Sul']:
+        return 'Centro-Oeste'
+    
+    elif uf in ['Alagoas', 'Bahia', 'Ceará', 'Maranhão', 'Paraíba', 'Pernambuco', 'Piauí', 'Rio Grande do Norte', 'Sergipe']:
+        return 'Nordeste'
+    
+    elif uf in ['Acre', 'Amapá', 'Amazonas', 'Pará', 'Rondônia', 'Roraima', 'Tocantins']:
+        return 'Norte'
+    
+    elif uf in ['Espírito Santo', 'Minas Gerais', 'Rio de Janeiro', 'São Paulo']:
+        return 'Sudeste'
+    
+    elif uf in ['Paraná', 'Rio Grande do Sul', 'Santa Catarina']:
+        return 'Sul'
+
+uf['Região'] = uf['Unidade federativa'].apply(uf_to_regiao)
+# %%
+uf
+# %%
