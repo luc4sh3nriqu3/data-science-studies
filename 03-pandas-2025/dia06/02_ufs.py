@@ -47,7 +47,7 @@ uf['Expectativa de vida (2016)'] = uf['Expectativa de vida (2016)'].apply(exp_to
 uf
 # %%
 #Coluna de alfabetização
-def alf_to_percent(p):
+def alf_to_percent(p:str):
     return round( float(p.replace('%', '')
                   .replace(',', '.')) / 100, 3 )
 
@@ -62,12 +62,12 @@ uf
 #  x -- 1000 -> 100x = 1000y -> x = 10y
 #Ou seja retornaremos um valor 10 vezes maior que o recebido
 
-def mort_to_percent(y):
-    return round( float(y.replace('‰', '')
-                  .replace(',', '.')) * 10 )
+def mort_to_percent(y:str):
+    return float(y.replace('‰', '')
+                  .replace(',', '.'))
 
 
-uf['Mortalidade infantil (2016)'] = uf['Mortalidade infantil (2016)'].apply(mort_to_percent)
+uf['Mortalidade infantil (/1000)'] = uf['Mortalidade infantil (2016)'].apply(mort_to_percent)
 # %%
 uf
 # %%
@@ -90,4 +90,18 @@ def uf_to_regiao(uf):
 uf['Região'] = uf['Unidade federativa'].apply(uf_to_regiao)
 # %%
 uf
+# %%
+    # if 
+    # PIB/CAPTA > 30000 + 
+    # MORTALIDADE < 15/1000 + 
+    # IDH > 700 -> 'Parece bom'
+
+    #else -> 'Não parece bom'
+
+def classifica_bom(linha):
+    return (linha['PIB per capita (R$) (2015)'] > 30000 and
+            linha['Mortalidade infantil (/1000)'] < 15 and
+            linha['IDH (2010)'] > 700)
+
+uf.apply(classifica_bom, axis=1) #Aplicando em cada linha do dataframe
 # %%
