@@ -1,4 +1,5 @@
 #%%
+#03.03 - Quantas colunas do tipo object há no arquivo produtos.csv ?
 import pandas as pd
 
 clientes = pd.read_csv('../../data/clientes.csv', sep=';')

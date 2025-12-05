@@ -1,4 +1,5 @@
 #%%
+#03.02 - Quantas colunas do tipo int há no arquivo transacoes.csv ?
 import pandas as pd
 clientes = pd.read_csv('../../data/clientes.csv', sep=';')
 clientes

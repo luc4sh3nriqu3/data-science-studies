@@ -1,4 +1,5 @@
 #%%
+#03.01 - Quantas linhas há no arquivo clientes.csv ?
 import pandas as pd
 
 clientes = pd.read_csv('../../data/clientes.csv', sep=';')
