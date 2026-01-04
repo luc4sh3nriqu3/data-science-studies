@@ -26,4 +26,5 @@ for i in file_names:
 dfs[-5]
 # %%
 df_full = pd.concat(dfs, axis=1).reset_index().sort_values(['período', 'nome'])
+df_full.to_csv('homicidios_consolidados.csv', index=False, sep=';')
 # %%
