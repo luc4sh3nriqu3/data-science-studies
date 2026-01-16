@@ -3,3 +3,4 @@
 *.xlsx
 *.parquet
 *.pdf
+*.db
