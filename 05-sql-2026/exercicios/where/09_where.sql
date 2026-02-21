@@ -1,3 +1,5 @@
+-- Listar todas as transações adicionando uma coluna nova sinalizando
+-- "baixo", "médio" e "alto" para o valor dos pontos [´<10; <500; >=500]
 SELECT IdTransacao,
        QtdePontos,
        CASE
